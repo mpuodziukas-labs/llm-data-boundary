@@ -262,7 +262,10 @@ def _const(name: str) -> Any:
 
 
 def parse_json(raw: str) -> Any:
-    return json.loads(raw, object_pairs_hook=_pairs, parse_constant=_const)
+    try:
+        return json.loads(raw, object_pairs_hook=_pairs, parse_constant=_const)
+    except RecursionError:
+        raise ValueError("nesting too deep")
 
 
 def load_json(path: str) -> Any:

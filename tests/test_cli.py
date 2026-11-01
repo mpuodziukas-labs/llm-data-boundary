@@ -9,6 +9,23 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from helpers import NOW, ROOT, boundary, cli, prov, reg, req, write_json  # noqa: E402
 
 
+def test_deeply_nested_json_is_bad_input_exit_2(tmp_path):
+    log = os.path.join(str(tmp_path), "e.jsonl")
+    rp, gp = os.path.join(str(tmp_path), "r.json"), os.path.join(str(tmp_path), "g.json")
+    write_json(gp, reg(p=prov()))
+    with open(rp, "w") as fh:
+        fh.write("[" * 100000 + "]" * 100000)
+    assert boundary.main(["decide", rp, "--registry", gp, "--log", log, "--now", NOW]) == 2
+    assert not os.path.exists(log)
+
+
+def test_evaluate_rejects_arguments_with_exit_two():
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "evaluate.py"), "--bogus"],
+                       capture_output=True, text=True)
+    assert r.returncode == 2
+    assert "usage" in r.stderr
+
+
 def test_exit_codes(tmp_path):
     p = reg(p=prov(), t=prov(trains=True, zdr=False, days=30))
     assert cli(tmp_path, req("hello", provider="p"), p) == 0
