@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "hello",
+  "provider": "liar-zdr"
+}

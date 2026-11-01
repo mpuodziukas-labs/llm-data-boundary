@@ -1,0 +1,13 @@
+{
+  "classes": {
+    "PII_CARD": 1,
+    "PII_EMAIL": 1,
+    "PII_PHONE": 1,
+    "PII_SSN": 1
+  },
+  "decision": "REDACT-THEN-ALLOW",
+  "exit": 0,
+  "now": "2026-11-01",
+  "redacted_payload": "Contact [REDACTED:PII_EMAIL] or [REDACTED:PII_PHONE], SSN [REDACTED:PII_SSN], card [REDACTED:PII_CARD].",
+  "rule": "R10_REDACT_THEN_ALLOW"
+}

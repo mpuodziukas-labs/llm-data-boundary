@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "CONFIDENTIAL: pricing sheet",
+  "provider": "pub-train"
+}

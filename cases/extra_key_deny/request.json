@@ -1,0 +1,7 @@
+{
+  "admin": true,
+  "app": "x",
+  "labels": [],
+  "payload": "hi",
+  "provider": "acme-safe"
+}

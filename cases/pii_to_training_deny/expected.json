@@ -1,0 +1,9 @@
+{
+  "classes": {
+    "PII_EMAIL": 1
+  },
+  "decision": "DENY",
+  "exit": 1,
+  "now": "2026-11-01",
+  "rule": "R09_PII_TO_TRAINING_PROVIDER"
+}

@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "SSN 123-45​-6789 on file",
+  "provider": "acme-safe"
+}

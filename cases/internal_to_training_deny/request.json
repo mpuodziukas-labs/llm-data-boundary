@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "INTERNAL"
+  ],
+  "payload": "team offsite notes",
+  "provider": "pub-train"
+}

@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "The quarterly weather is sunny.",
+  "provider": "acme-safe"
+}

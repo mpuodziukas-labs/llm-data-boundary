@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "ref 4111111111111112 attached",
+  "provider": "acme-safe"
+}

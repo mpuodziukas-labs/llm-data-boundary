@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "debug with AKIAIOSFODNN7EXAMPLE please",
+  "provider": "pub-train"
+}

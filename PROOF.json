@@ -1,0 +1,174 @@
+{
+  "matched": 28,
+  "total": 28,
+  "cases": [
+    {
+      "case": "attestation_181_days_deny",
+      "expected": "exit=1 DENY R04_ATTESTATION_STALE {}",
+      "got": "exit=1 DENY R04_ATTESTATION_STALE {}",
+      "match": true
+    },
+    {
+      "case": "attestation_exactly_180_days_allow",
+      "expected": "exit=0 ALLOW R13_ALLOW {}",
+      "got": "exit=0 ALLOW R13_ALLOW {}",
+      "match": true
+    },
+    {
+      "case": "attestation_in_future_deny",
+      "expected": "exit=1 DENY R04_ATTESTATION_FUTURE {}",
+      "got": "exit=1 DENY R04_ATTESTATION_FUTURE {}",
+      "match": true
+    },
+    {
+      "case": "aws_key_to_training_deny",
+      "expected": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {\"SECRET_AWS_KEY\": 1}",
+      "got": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {\"SECRET_AWS_KEY\": 1}",
+      "match": true
+    },
+    {
+      "case": "card_fails_luhn_allow",
+      "expected": "exit=0 ALLOW R13_ALLOW {}",
+      "got": "exit=0 ALLOW R13_ALLOW {}",
+      "match": true
+    },
+    {
+      "case": "confidential_to_non_zdr_deny",
+      "expected": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "got": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "match": true
+    },
+    {
+      "case": "confidential_to_training_deny",
+      "expected": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "got": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "match": true
+    },
+    {
+      "case": "confidential_to_zdr_allow",
+      "expected": "exit=0 ALLOW R13_ALLOW {}",
+      "got": "exit=0 ALLOW R13_ALLOW {}",
+      "match": true
+    },
+    {
+      "case": "customer_data_in_text",
+      "expected": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "got": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "match": true
+    },
+    {
+      "case": "entropy_secret_redacted",
+      "expected": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"SECRET_ENTROPY\": 1}",
+      "got": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"SECRET_ENTROPY\": 1}",
+      "match": true
+    },
+    {
+      "case": "extra_key_deny",
+      "expected": "exit=1 DENY R01_MALFORMED_REQUEST {}",
+      "got": "exit=1 DENY R01_MALFORMED_REQUEST {}",
+      "match": true
+    },
+    {
+      "case": "internal_to_training_deny",
+      "expected": "exit=1 DENY R12_INTERNAL_TO_TRAINING_PROVIDER {}",
+      "got": "exit=1 DENY R12_INTERNAL_TO_TRAINING_PROVIDER {}",
+      "match": true
+    },
+    {
+      "case": "malformed_labels_deny",
+      "expected": "exit=1 DENY R01_MALFORMED_REQUEST {}",
+      "got": "exit=1 DENY R01_MALFORMED_REQUEST {}",
+      "match": true
+    },
+    {
+      "case": "no_contract_deny",
+      "expected": "exit=1 DENY R08_NO_CONTRACT {}",
+      "got": "exit=1 DENY R08_NO_CONTRACT {}",
+      "match": true
+    },
+    {
+      "case": "pii_redacted",
+      "expected": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"PII_CARD\": 1, \"PII_EMAIL\": 1, \"PII_PHONE\": 1, \"PII_SSN\": 1}",
+      "got": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"PII_CARD\": 1, \"PII_EMAIL\": 1, \"PII_PHONE\": 1, \"PII_SSN\": 1}",
+      "match": true
+    },
+    {
+      "case": "pii_to_training_deny",
+      "expected": "exit=1 DENY R09_PII_TO_TRAINING_PROVIDER {\"PII_EMAIL\": 1}",
+      "got": "exit=1 DENY R09_PII_TO_TRAINING_PROVIDER {\"PII_EMAIL\": 1}",
+      "match": true
+    },
+    {
+      "case": "public_allow",
+      "expected": "exit=0 ALLOW R13_ALLOW {}",
+      "got": "exit=0 ALLOW R13_ALLOW {}",
+      "match": true
+    },
+    {
+      "case": "region_not_allowed_deny",
+      "expected": "exit=1 DENY R05_REGION_NOT_ALLOWED {}",
+      "got": "exit=1 DENY R05_REGION_NOT_ALLOWED {}",
+      "match": true
+    },
+    {
+      "case": "registry_field_missing_deny",
+      "expected": "exit=1 DENY R03_REGISTRY_INVALID {}",
+      "got": "exit=1 DENY R03_REGISTRY_INVALID {}",
+      "match": true
+    },
+    {
+      "case": "restricted_never_leaves",
+      "expected": "exit=1 DENY R06_RESTRICTED_NEVER_LEAVES {}",
+      "got": "exit=1 DENY R06_RESTRICTED_NEVER_LEAVES {}",
+      "match": true
+    },
+    {
+      "case": "secrets_redacted_for_zdr",
+      "expected": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"SECRET_BEARER\": 1, \"SECRET_PRIVATE_KEY\": 1}",
+      "got": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"SECRET_BEARER\": 1, \"SECRET_PRIVATE_KEY\": 1}",
+      "match": true
+    },
+    {
+      "case": "ssn_invalid_area_allow",
+      "expected": "exit=0 ALLOW R13_ALLOW {}",
+      "got": "exit=0 ALLOW R13_ALLOW {}",
+      "match": true
+    },
+    {
+      "case": "ssn_zero_width_redacted",
+      "expected": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"PII_SSN\": 1}",
+      "got": "exit=0 REDACT-THEN-ALLOW R10_REDACT_THEN_ALLOW {\"PII_SSN\": 1}",
+      "match": true
+    },
+    {
+      "case": "stale_attestation_deny",
+      "expected": "exit=1 DENY R04_ATTESTATION_STALE {}",
+      "got": "exit=1 DENY R04_ATTESTATION_STALE {}",
+      "match": true
+    },
+    {
+      "case": "text_label_overrides_request",
+      "expected": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "got": "exit=1 DENY R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR {}",
+      "match": true
+    },
+    {
+      "case": "unknown_provider_deny",
+      "expected": "exit=1 DENY R02_UNKNOWN_PROVIDER {}",
+      "got": "exit=1 DENY R02_UNKNOWN_PROVIDER {}",
+      "match": true
+    },
+    {
+      "case": "unparseable_request_exit2",
+      "expected": "exit=2 None None {}",
+      "got": "exit=2 None None {}",
+      "match": true
+    },
+    {
+      "case": "zdr_contradicts_retention_deny",
+      "expected": "exit=1 DENY R03_REGISTRY_INVALID {}",
+      "got": "exit=1 DENY R03_REGISTRY_INVALID {}",
+      "match": true
+    }
+  ]
+}

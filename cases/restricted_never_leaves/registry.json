@@ -1,0 +1,91 @@
+{
+  "providers": {
+    "acme-safe": {
+      "attested_on": "2026-09-01",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "broken-entry": {
+      "attested_on": "2026-09-01",
+      "contract_signed": true,
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "edge-180": {
+      "attested_on": "2026-05-05",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "edge-181": {
+      "attested_on": "2026-05-04",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "far-region": {
+      "attested_on": "2026-09-01",
+      "contract_signed": true,
+      "region": "apac",
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "future-co": {
+      "attested_on": "2026-12-01",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "liar-zdr": {
+      "attested_on": "2026-09-01",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 30,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "no-contract": {
+      "attested_on": "2026-09-01",
+      "contract_signed": false,
+      "region": "us",
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    },
+    "no-zdr": {
+      "attested_on": "2026-09-01",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 30,
+      "trains_on_inputs": false,
+      "zero_data_retention": false
+    },
+    "pub-train": {
+      "attested_on": "2026-09-01",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 30,
+      "trains_on_inputs": true,
+      "zero_data_retention": false
+    },
+    "stale-co": {
+      "attested_on": "2026-03-01",
+      "contract_signed": true,
+      "region": "us",
+      "retention_days": 0,
+      "trains_on_inputs": false,
+      "zero_data_retention": true
+    }
+  }
+}

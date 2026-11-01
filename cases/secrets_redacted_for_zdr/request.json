@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "-----BEGIN EXAMPLE PRIVATE KEY----- and Authorization: Bearer abcdEFGH1234ijklMNOP5678",
+  "provider": "acme-safe"
+}

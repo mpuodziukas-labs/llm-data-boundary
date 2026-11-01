@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "Customer data export for tenant 7",
+  "provider": "no-zdr"
+}

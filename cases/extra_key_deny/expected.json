@@ -1,0 +1,7 @@
+{
+  "classes": {},
+  "decision": "DENY",
+  "exit": 1,
+  "now": "2026-11-01",
+  "rule": "R01_MALFORMED_REQUEST"
+}

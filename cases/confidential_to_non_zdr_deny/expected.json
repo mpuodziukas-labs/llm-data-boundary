@@ -1,0 +1,7 @@
+{
+  "classes": {},
+  "decision": "DENY",
+  "exit": 1,
+  "now": "2026-11-01",
+  "rule": "R07_CONFIDENTIAL_TO_TRAINING_OR_NON_ZDR"
+}

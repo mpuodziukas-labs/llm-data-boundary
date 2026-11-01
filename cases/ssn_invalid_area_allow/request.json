@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "ticket 000-12-3456 closed",
+  "provider": "acme-safe"
+}

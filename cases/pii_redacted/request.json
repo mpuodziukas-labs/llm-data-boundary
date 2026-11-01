@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "Contact jane.doe@example.test or (520) 555-0142, SSN 123-45-6789, card 4111 1111 1111 1111.",
+  "provider": "acme-safe"
+}

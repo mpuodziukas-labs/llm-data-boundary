@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "CONFIDENTIAL"
+  ],
+  "payload": "Roadmap draft",
+  "provider": "acme-safe"
+}

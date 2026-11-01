@@ -1,0 +1,8 @@
+{
+  "app": "support-bot",
+  "labels": [
+    "PUBLIC"
+  ],
+  "payload": "mail jane.doe@example.test",
+  "provider": "pub-train"
+}

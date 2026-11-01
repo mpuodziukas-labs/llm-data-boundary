@@ -1,0 +1,6 @@
+{
+  "app": "x",
+  "labels": "CONFIDENTIAL",
+  "payload": "hi",
+  "provider": "acme-safe"
+}

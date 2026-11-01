@@ -1,0 +1,10 @@
+{
+  "classes": {
+    "PII_SSN": 1
+  },
+  "decision": "REDACT-THEN-ALLOW",
+  "exit": 0,
+  "now": "2026-11-01",
+  "redacted_payload": "SSN [REDACTED:PII_SSN] on file",
+  "rule": "R10_REDACT_THEN_ALLOW"
+}
