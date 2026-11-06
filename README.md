@@ -1,5 +1,7 @@
 # llm-data-boundary
 
+[![CI](https://github.com/mpuodziukas-labs/llm-data-boundary/actions/workflows/ci.yml/badge.svg)](https://github.com/mpuodziukas-labs/llm-data-boundary/actions/workflows/ci.yml)
+
 Proves: a policy-as-code gate that decides, per request, whether text may go to a given LLM provider (ALLOW, REDACT-THEN-ALLOW or DENY), using the provider's recorded attributes (trains on inputs, zero data retention, region, contract, attestation date), and writes a hash-chained evidence record for every decision that a verifier refuses if it is edited, reordered or forged. Verify in 60s: `python3 evaluate.py`
 
 All data here is synthetic. Engineering evidence, not legal advice, no certification claimed.
@@ -84,6 +86,28 @@ These are the author's reading of how each check supports the cited text, not an
 | NIST AI RMF GOVERN 1.1 (legal and regulatory requirements documented) | the rule table and the evidence log are the documentation |
 | EU AI Act Article 10 (data governance) | cited by article number only; primary text was not fetched in this repo |
 | ISO/IEC 42001 | clause not verified from public text; no control is claimed |
+
+## Go implementation
+
+`go/` holds a second implementation of the decision point (allow, redact, deny) in Go, standard library only. Package `pdp` exposes `Decide`; `go/cmd/pdp` reads one JSON request on stdin and prints one JSON decision. It is the decision point only and keeps no evidence log.
+
+What parity proves: for every request in the committed corpus, the Go decision, rule, classes, labels, attributes and redacted payload are byte-identical to what `boundary.py` returns, compared as canonical JSON (sorted keys, compact separators, ASCII escapes). The corpus is `go/testdata/parity.jsonl`, written by `go/tools/gen_parity.py` from a fixed seed, so it can be regenerated and diffed. It covers all 14 rules, including rejected input. A second corpus, `go/testdata/normalize.jsonl`, checks the Unicode normalization step on its own. Python's regex and normalization behavior is reimplemented by hand (Unicode digits, spaces and word boundaries, lookaround, backtracking, NFKC from generated tables, and `json.loads` rules such as duplicate keys and the 4300-digit integer limit). Parity shows the two agree on those inputs. It does not show they agree on inputs outside the corpus.
+
+```
+cd go && go vet ./... && go test ./... -count=1
+cd go && go test ./pdp -run '^$' -fuzz FuzzDecide -fuzztime=30s
+bash scripts/verify-go.sh
+bash scripts/verify-go.sh --selftest
+```
+
+Counts at the time of writing: 28/28 case folders (read in place, also run through the built CLI), 3060/3060 parity records, 4000/4000 normalization records, and a 30 second fuzz run with no panic, deterministic output, and denial of any unknown data class. `verify-go.sh` fails if the parity corpus has fewer than 2000 records. `--selftest` plants a redact turned into allow and an unknown class allowed in a temporary copy, requires each to turn the check red through a failing test and the untouched copy to stay green, and prints `selftest 3/3`.
+
+Known differences:
+
+- The Unicode tables come from Python 3.11 (Unicode 14.0.0). Another Python version may normalize some characters differently, and the generator refuses to run on a different Unicode version.
+- Nesting depth is capped near 991 in Go. Python's limit depends on the interpreter's recursion limit, so inputs near that depth may differ.
+- The entropy rule sums logarithms. Go and the C library can differ in the last bit, so a value within that margin of the threshold may fall on either side.
+- The command line treats input files that are not valid UTF-8, or that contain encoded surrogates, as bad input (exit 2).
 
 ## Honesty
 
