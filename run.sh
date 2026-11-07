@@ -2,8 +2,9 @@
 # One command, whole proof: table, tests, mutants. Exit 0 only if all three pass.
 set -uo pipefail
 cd "$(dirname "$0")"
-/usr/bin/python3 evaluate.py || exit 1
+PY="${PYTHON:-python3}"   # the interpreter on PATH, so CI uses the one setup-python installed pytest into
+"$PY" evaluate.py || exit 1
 echo
-/usr/bin/python3 -m pytest -q -p no:cacheprovider || exit 1
+"$PY" -m pytest -q -p no:cacheprovider || exit 1
 echo
-/usr/bin/python3 mutants.py
+"$PY" mutants.py
