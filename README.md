@@ -26,7 +26,7 @@ The whole proof is `bash run.sh`: the case table, the pytest suite and the mutat
 
 ```
 evaluate.py | rc=0 | cases: 28/28 match
--m pytest | rc=0 | 53 passed
+-m pytest | rc=0 | 57 passed
 mutants.py | rc=0 | mutants: 29/29 killed
 ```
 
