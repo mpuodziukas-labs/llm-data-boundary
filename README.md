@@ -85,6 +85,10 @@ These are the author's reading of how each check supports the cited text, not an
 | EU AI Act Article 10 (data governance) | cited by article number only; primary text was not fetched in this repo |
 | ISO/IEC 42001 | clause not verified from public text; no control is claimed |
 
+## Privacy mapping
+
+[docs/PRIVACY-MAPPING.md](docs/PRIVACY-MAPPING.md) maps selected GDPR and CCPA/CPRA provisions to the tests and cases that exercise them, and a test fails if a cited name stops existing.
+
 ## Honesty
 
 The cases are synthetic and were written for this repo. No language model runs in the loop: the gate and the evaluator import only the Python standard library and open no network connection. The expected results sit beside the cases the checks are scored against, so the match count is a consistency check and not a claim that the checks generalize. The key-shaped string in the AWS case is a documented example value planted as a test fixture, not a secret. Nothing here was run against production data.
